@@ -7,3 +7,5 @@ document.getElementById('start-button').addEventListener('click', function() {
 });
 
 /*-----------------------THE-GAME----------------------------*/
+
+const words = ['coffee', 'programming', 'interface', 'whiskey', 'love', 'glowworm', 'jigsaw', 'bikini', 'buzzard', 'thumbscrew', 'transplant', 'python', 'unknown', 'index', 'xylophone', 'zombie', 'cassandra', 'sanna', 'wave', 'rhythm', 'subway', 'unworthy', 'witchcraft'];
