@@ -23,6 +23,10 @@ body {
     display: none;
 }
 
+#start-frame  {
+    text-align: center;
+}
+
 h1 {
     font-size: 65px;
 }
@@ -58,7 +62,7 @@ button:hover {
 }
 
 .figure-part {
-    /*display: none; */
+    display: none;
 }
 
 
