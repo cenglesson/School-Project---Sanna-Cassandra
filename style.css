@@ -65,7 +65,9 @@ button:hover {
     display: none;
 }
 
-
+.shown {
+    display: block;
+}
 
 #game-name, #instructions-heading, #instructions-text {
     text-align: center;

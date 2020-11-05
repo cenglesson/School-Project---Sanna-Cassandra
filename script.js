@@ -45,13 +45,14 @@ window.addEventListener("keydown", e => {
     // If the letter is not in the word, add it to the list
     } else {
         wrongGuesses.innerHTML += "<li>" + letter + "</li>";
-        errorCounter += 1;
         
         figureParts.forEach((element, index) => {
             if (index === errorCounter) {
-                
-            }
+                element.classList.add("shown");
+            };
         });
+
+        errorCounter += 1;
     }
     }
 })
