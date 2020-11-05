@@ -61,3 +61,13 @@ button {
 button:hover {
     color: rgb(0, 0, 0);
 }
+
+
+#hangman {
+    stroke: rgb(245, 243, 243);
+    stroke-width: 5px;
+}
+
+.figure-part {
+    display: none;
+}
