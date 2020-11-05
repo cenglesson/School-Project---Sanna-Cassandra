@@ -15,4 +15,4 @@ var shownWord = document.getElementById("shown-word");
 
 for (var i=0; i<word.length; i++) {
     shownWord.innerHTML += "<li>_</li>";
-}
+};

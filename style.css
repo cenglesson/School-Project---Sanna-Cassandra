@@ -2,10 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
-* {
-    box-sizing: border-box;
-}
-
 body {
     background:url(https://wallpapercave.com/wp/YWu8z9R.gif);
     background-position: center;
@@ -16,23 +12,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
     margin: 0;
-    overflow: hidden;
 }
 
 /*-------------------START-FRAME-------------------------*/
 
 .hide {
     display: none;
-}
-
-.flex-container {
-    display: flex;
-    flex-direction: column;  
-    height: 1000px;
-    width: 1000px;
-    text-align: center; 
 }
 
 h1 {
@@ -43,6 +29,10 @@ h1 {
 h3 {
     font-size: 30px;
     font-family: 'Special Elite', cursive;
+}
+
+p, ul {
+    color: white;
 }
 
 button {
