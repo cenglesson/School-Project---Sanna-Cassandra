@@ -10,6 +10,7 @@ document.getElementById('start-button').addEventListener('click', function() {
 
 // Create JS variables for HTML-elements
 var shownWord = document.getElementById("shown-word");
+var rightWord = document.getElementById("right-word");
 var wrongGuesses = document.getElementById("wrong-guesses");
 
 
@@ -20,7 +21,8 @@ var word = words[Math.floor(Math.random() * words.length)];
 
 // Create a list of lines with as many lines as there are letters in the chosen word
 for (var i=0; i<word.length; i++) {
-    shownWord.innerHTML += '<li>_</li>';
+    shownWord.innerHTML += "<li>_</li>";
+    rightWord.innerHTML += "<li>" + word[i] + "</li>";
 };
 
 // Make a guess by pressing letter on keyboard
@@ -35,9 +37,11 @@ window.addEventListener("keydown", e => {
             shownWord.children[i].innerHTML = letter;
             }
         }
-    // If the letter has already been guessed:
+    // If the letter has already been guessed, console the log
     } else if (shownWord.innerHTML.includes("<li>" + letter + "</li>") || wrongGuesses.innerHTML.includes("<li>" + letter + "</li>")) {
         console.log("Already guessed!")
+
+    // If the letter is not in the word, add it to the list
     } else {
         wrongGuesses.innerHTML += "<li>" + letter + "</li>";
     }
