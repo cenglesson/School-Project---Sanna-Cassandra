@@ -106,3 +106,7 @@ ul {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
 }
+
+#right-word {
+    display: none;
+}
