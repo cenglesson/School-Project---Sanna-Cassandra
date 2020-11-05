@@ -27,21 +27,21 @@ h1 {
 }
 
 h3 {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 p, li {
-    font-size: 30px;
+    font-size: 50px;
 }
 
 button {
     background-color: rgba(248, 245, 245, 0.651);
     color: rgb(245, 241, 241);
-    border-radius: 20px;
     display: block; margin: auto; 
     height: 50px;
     width: 200px;
-    font-size: 20px;
+    font-size: 25px;
+    font-family: 'VT323', monospace;;
     margin-top: 100px;
     cursor: pointer;
 }
@@ -57,8 +57,31 @@ button:hover {
 }
 
 .figure-part {
+    /*display: none; */
+}
+
+#game-name, #instructions-heading, #instructions-text {
+    text-align: center;
+}
+
+#instructions-text {
+    margin-bottom: 150px;
+    font-size: 20px;
     
 }
+
+#instructions-heading {
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 3px;
+  
+}
+
+#game-name{
+    margin-bottom: 10px;
+}
+
+
 
 ul {
     list-style: none;
