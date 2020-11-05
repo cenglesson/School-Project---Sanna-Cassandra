@@ -81,7 +81,7 @@ button:hover {
 }
 
 #instructions-text {
-    margin-bottom: 95px;
+    margin-bottom: 80px;
     font-size: 20px;
 }
 
@@ -92,6 +92,7 @@ button:hover {
 }
 
 #game-name{
+    margin-top: 30px;
     margin-bottom: 10px;
 }
 
