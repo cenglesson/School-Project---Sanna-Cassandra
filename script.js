@@ -8,13 +8,17 @@ document.getElementById('start-button').addEventListener('click', function() {
 
 /*-----------------------THE-GAME----------------------------*/
 
+// Create JS variables for HTML-elements
+var shownWord = document.getElementById("shown-word");
+var wrongGuesses = document.getElementById("wrong-guesses");
+
+
 const words = ['coffee', 'programming', 'interface', 'whiskey', 'love', 'glowworm', 'jigsaw', 'bikini', 'buzzard', 'thumbscrew', 'transplant', 'python', 'unknown', 'index', 'xylophone', 'zombie', 'cassandra', 'sanna', 'wave', 'rhythm', 'subway', 'unworthy', 'witchcraft'];
 
 // Choose a random word from the array of words
 var word = words[Math.floor(Math.random() * words.length)];
 
 // Create a list of lines with as many lines as there are letters in the chosen word
-var shownWord = document.getElementById("shown-word");
 for (var i=0; i<word.length; i++) {
     shownWord.innerHTML += '<li>_</li>';
 };
@@ -31,6 +35,11 @@ window.addEventListener("keydown", e => {
             shownWord.children[i].innerHTML = letter;
             }
         }
+    // If the letter has already been guessed:
+    } else if (shownWord.innerHTML.includes("<li>" + letter + "</li>") || wrongGuesses.innerHTML.includes("<li>" + letter + "</li>")) {
+        console.log("Already guessed!")
+    } else {
+        wrongGuesses.innerHTML += "<li>" + letter + "</li>";
     }
     }
 })
