@@ -1,0 +1,40 @@
+/*-------------------START-FRAME-------------------------*/
+
+.hide {
+    display: none;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;  
+    height: 1000px;
+    width: 1000px;
+    text-align: center; 
+}
+
+h1 {
+    font-size: 65px;
+    font-family: 'Teko', sans-serif;
+}
+
+h3 {
+    font-size: 30px;
+    font-family: 'Special Elite', cursive;
+}
+
+button {
+    background-color: rgba(248, 245, 245, 0.651);
+    color: rgb(245, 241, 241);
+    border-radius: 20px;
+    display: block; margin: auto; 
+    height: 50px;
+    width: 200px;
+    font-family: 'Teko', sans-serif;
+    font-size: 30px;
+    margin-top: 100px;
+    cursor: pointer;
+}
+
+button:hover {
+    color: rgb(0, 0, 0);
+}
