@@ -31,18 +31,19 @@ window.addEventListener("keydown", e => {
     if (e.keyCode >= 65 && e.keyCode <= 90) {
         const letter = e.key;
 
+    // If the letter has already been guessed, console the log
+    if (shownWord.innerHTML.includes("<li>" + letter + "</li>") || wrongGuesses.innerHTML.includes("<li>" + letter + "</li>")) {
+        console.log("Already guessed!")
+
     // If the letter is in the word - show it in the right position
-    if (word.includes(letter)) {
+    } else if (word.includes(letter)) {
         for (var i=0; i<word.length; i++) {
             if (letter === word[i]) {
             shownWord.children[i].innerHTML = letter;
             }
         }
-    // If the letter has already been guessed, console the log
-    } else if (shownWord.innerHTML.includes("<li>" + letter + "</li>") || wrongGuesses.innerHTML.includes("<li>" + letter + "</li>")) {
-        console.log("Already guessed!")
 
-    // If the letter is not in the word, add it to the list
+    // If the letter is not in the word, add it to the wrong-guesses-list
     } else {
         wrongGuesses.innerHTML += "<li>" + letter + "</li>";
         
@@ -55,4 +56,4 @@ window.addEventListener("keydown", e => {
         errorCounter += 1;
     }
     }
-})
+});
