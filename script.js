@@ -12,7 +12,8 @@ document.getElementById('start-button').addEventListener('click', function() {
 var shownWord = document.getElementById("shown-word");
 var rightWord = document.getElementById("right-word");
 var wrongGuesses = document.getElementById("wrong-guesses");
-
+var figureParts = document.querySelectorAll(".figure-part")
+var errorCounter = 0;
 
 const words = ['coffee', 'programming', 'interface', 'whiskey', 'love', 'glowworm', 'jigsaw', 'bikini', 'buzzard', 'thumbscrew', 'transplant', 'python', 'unknown', 'index', 'xylophone', 'zombie', 'cassandra', 'sanna', 'wave', 'rhythm', 'subway', 'unworthy', 'witchcraft'];
 
@@ -44,6 +45,13 @@ window.addEventListener("keydown", e => {
     // If the letter is not in the word, add it to the list
     } else {
         wrongGuesses.innerHTML += "<li>" + letter + "</li>";
+        errorCounter += 1;
+        
+        figureParts.forEach((element, index) => {
+            if (index === errorCounter) {
+                
+            }
+        });
     }
     }
 })
