@@ -14,6 +14,7 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0;
+    overflow: hidden;
 }
 
 /*-------------------START-FRAME-------------------------*/
@@ -60,21 +61,21 @@ button:hover {
     /*display: none; */
 }
 
+
+
 #game-name, #instructions-heading, #instructions-text {
     text-align: center;
 }
 
 #instructions-text {
-    margin-bottom: 150px;
+    margin-bottom: 95px;
     font-size: 20px;
-    
 }
 
 #instructions-heading {
   font-size: 30px;
   margin-top: 10px;
   margin-bottom: 3px;
-  
 }
 
 #game-name{
