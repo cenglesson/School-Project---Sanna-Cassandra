@@ -5,8 +5,7 @@
 
 body {
     background:url(https://wallpapercave.com/wp/YWu8z9R.gif);
-    background-position: center;
-    background-repeat: no-repeat;
+    background-position: top;
     background-size: cover;
     color: rgb(255, 254, 254);
     font-family: 'VT323', monospace;;
@@ -14,6 +13,7 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0;
+    
    
 }
 
