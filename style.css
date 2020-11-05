@@ -63,6 +63,11 @@ button:hover {
     stroke-width: 5px;
 }
 
+.thinner {
+    stroke-width: 2px;
+    fill: white;
+}
+
 .figure-part {
     display: none;
 }
