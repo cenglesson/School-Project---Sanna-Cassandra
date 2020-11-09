@@ -10,7 +10,7 @@
     <title>The Game Of Hangman</title>
 </head>
 
-<body>
+<body class="flex-container">
     <article id="start-frame">
         <h1><i class="fas fa-gamepad"></i> Welcome To Our Game! <i class="fas fa-gamepad"></i></h1>
         <img  src="https://webstockreview.net/images/eye-clipart-animation-19.gif" alt="hanging man" width=200 />
@@ -43,23 +43,23 @@
                     fill="none" />
             </svg>
 
-            <ul id="shown-word"></ul>
-            <ul id="wrong-guesses"></ul>
+            <ul class="flex-container" id="shown-word"></ul>
+            <ul class="flex-container" id="wrong-guesses"></ul>
             <ul id="right-word"></ul>
 
-            <article id="win-popup" class="hide"> 
+            <article id="win-popup" class="flex-container hide"> 
                 <h1>You Won!</h1>
                 <button id="play-again-btn">Play Again!</button>
             </article>
 
-            <article id="lose-popup" class="hide">
+            <article id="lose-popup" class="flex-container hide">
                 <h1>You Lose!</h1>
                 <p>The word was:</p>
                 <p id="the-word-was"></p>
                 <button id="play-again-btn2">Play Again!</button>
             </article>
 
-            <article id="point-counter">
+            <article class="flex-container" id="point-counter">
                 <h1>Points: </h1>
                 <p id="point-container"></p>
             </article>
