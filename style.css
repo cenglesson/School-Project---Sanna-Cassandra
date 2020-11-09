@@ -88,15 +88,21 @@ button:hover {
 #lose-popup h1 {
     font-size: 150px;
     text-decoration-style: wavy;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 2px;
 }
 
 #lose-popup p {
-    font-size: 75px;
+    font-size: 50px;
     margin-top: 10px;
     margin-bottom: 0px;
 }
+
+#lose-popup p#the-word-was {
+    font-size: 75px;
+    margin-bottom: 2rem;
+}
+
 
 #lose-popup button {
     margin-top: 50px;

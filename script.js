@@ -23,6 +23,7 @@ var theWordWas = document.getElementById("the-word-was");
 var points = 0;
 var pointCounter = document.getElementById("point-counter");
 var pointContainer = document.getElementById("point-container");
+var pointResult = document.getElementById("point-result");
 
 const words = ['coffee', 'programming', 'interface', 'whiskey', 'love', 'glowworm', 'jigsaw', 'bikini', 'buzzard', 'thumbscrew', 'transplant', 'python', 'unknown', 'index', 'xylophone', 'zombie', 'cassandra', 'sanna', 'wave', 'rhythm', 'subway', 'unworthy', 'witchcraft'];
 
@@ -80,6 +81,7 @@ window.addEventListener("keydown", e => {
         if (errorCounter === 5 ){
             losePopup.classList.toggle("hide");
             theWordWas.innerHTML = word;
+            pointResult.innerHTML = `You got ${points} points.`
             
 
         };
