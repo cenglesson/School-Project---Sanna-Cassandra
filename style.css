@@ -68,13 +68,19 @@ button:hover {
     fill: white;
 }
 
-.figure-part {
-    display: none;
+#lose-popup {
+    background-image: url(https://i.gifer.com/U3w9.gif);
+    background-position: center;
+    background-size: contain;
+    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
 
-.shown {
-    display: block;
-}
 
 #game-name, #instructions-heading, #instructions-text {
     text-align: center;

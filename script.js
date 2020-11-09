@@ -9,22 +9,38 @@ document.getElementById('start-button').addEventListener('click', function() {
 /*-----------------------THE-GAME----------------------------*/
 
 // Create JS variables for HTML-elements
+var word = "";
 var shownWord = document.getElementById("shown-word");
 var rightWord = document.getElementById("right-word");
 var wrongGuesses = document.getElementById("wrong-guesses");
-var figureParts = document.querySelectorAll(".figure-part")
+var figureParts = document.querySelectorAll(".figure-part");
 var errorCounter = 0;
+var winPopup = document.getElementById("win-popup");
+var playAgainBtn = document.getElementById("play-again-btn");
+var losePopup = document.getElementById("lose-popup");
+var playAgainBtn2 = document.getElementById("play-again-btn2");
+var theWordWas = document.getElementById("the-word-was");
+var points = 0;
+var pointCounter = document.getElementById("point-counter");
+var pointContainer = document.getElementById("point-container");
 
 const words = ['coffee', 'programming', 'interface', 'whiskey', 'love', 'glowworm', 'jigsaw', 'bikini', 'buzzard', 'thumbscrew', 'transplant', 'python', 'unknown', 'index', 'xylophone', 'zombie', 'cassandra', 'sanna', 'wave', 'rhythm', 'subway', 'unworthy', 'witchcraft'];
 
-// Choose a random word from the array of words
-var word = words[Math.floor(Math.random() * words.length)];
+var theWord = () => {
+    // Choose a random word from the array of words
+ word = words[Math.floor(Math.random() * words.length)];
 
 // Create a list of lines with as many lines as there are letters in the chosen word
 for (var i=0; i<word.length; i++) {
     shownWord.innerHTML += "<li>_</li>";
     rightWord.innerHTML += "<li>" + word[i] + "</li>";
 };
+};
+
+theWord();
+
+
+pointContainer.innerHTML = points;
 
 // Make a guess by pressing letter on keyboard
 window.addEventListener("keydown", e => {
@@ -41,6 +57,11 @@ window.addEventListener("keydown", e => {
             if (letter === word[i]) {
             shownWord.children[i].innerHTML = letter;
             }
+        } 
+
+        if (shownWord.innerHTML === rightWord.innerHTML) {
+            winPopup.classList.toggle('hide');
+            points += 5 - errorCounter;
         }
 
     // If the letter is not in the word, add it to the wrong-guesses-list
@@ -49,11 +70,43 @@ window.addEventListener("keydown", e => {
         
         figureParts.forEach((element, index) => {
             if (index === errorCounter) {
-                element.classList.add("shown");
+                element.classList.toggle("hide");
             };
         });
 
         errorCounter += 1;
+        
+        if (errorCounter === 5 ){
+            losePopup.classList.toggle("hide");
+            theWordWas.innerHTML = word;
+        };
     }
     }
+});
+
+// Reset game
+var resetGame = () => {
+    shownWord.innerHTML = " ";
+    rightWord.innerHTML = " ";
+    wrongGuesses.innerHTML = " ";
+    errorCounter = 0;
+    figureParts.forEach( element => {
+        if (element.classList.contains("hide")){
+            console.log("hej");
+        } else {element.classList.toggle("hide")};
+    });
+
+    theWord();
+};
+
+// Play again - Win
+playAgainBtn.addEventListener('click', () => {
+    resetGame();
+    winPopup.classList.toggle("hide");
+});
+
+// Play again - Lose
+playAgainBtn2.addEventListener('click', () =>{
+    resetGame();
+    losePopup.classList.toggle("hide");
 });
