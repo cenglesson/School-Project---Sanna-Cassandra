@@ -90,15 +90,13 @@ window.addEventListener("keydown", e => {
         if (errorCounter === 5 ){
             losePopup.classList.toggle("hide");
             theWordWas.innerHTML = word;
-            pointResult.innerHTML = `You got ${points} points.`
-            
-
+            pointResult.innerHTML = `You got ${points} points.`;
         };
     }
     }
 });
 
-// Reset game
+// Reset game - defining a function to invoke when you win or lose
 var resetGame = () => {
     shownWord.innerHTML = " ";
     rightWord.innerHTML = " ";
