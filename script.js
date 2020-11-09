@@ -92,9 +92,9 @@ var resetGame = () => {
     wrongGuesses.innerHTML = " ";
     errorCounter = 0;
     figureParts.forEach( element => {
-        if (element.classList.contains("hide")){
-            console.log("hej");
-        } else {element.classList.toggle("hide")};
+        if (element.classList.contains("hide")=== false){
+        element.classList.toggle("hide")
+    };
     });
 
     theWord();
