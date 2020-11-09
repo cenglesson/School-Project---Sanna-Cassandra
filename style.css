@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+/*-------------------IMPORT-FONT-------------------------*/
+
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
+/*-------------------GENERAL-STYLING--------------------------*/
+
 body {
-    background:url(https://wallpapercave.com/wp/YWu8z9R.gif);
-    background-position: top;
+    background:url(https://wallpapercave.com/wp/YWu8z9R.gif) top;
     background-size: cover;
     color: rgb(255, 254, 254);
     font-family: 'VT323', monospace;;
@@ -13,12 +13,13 @@ body {
     align-items: center;
     margin: 0;
     overflow: hidden;
-    height: 100%;
-    width: 100%;
+}
+
+.flex-container {
+    display: flex;
 }
 
 /*-------------------START-FRAME-------------------------*/
-
 
 #start-frame  {
     text-align: center;
@@ -36,6 +37,7 @@ p, li {
     font-size: 50px;
 }
 
+/* Styling for all buttons */
 button {
     background-color: rgba(248, 245, 245, 0.651);
     color: rgb(245, 241, 241);
@@ -54,8 +56,25 @@ button:hover {
 
 /*----------------------------THE-GAME----------------------------------------*/
 
-.flex-container {
-    display: flex;
+#game-container {
+    display:grid;
+    grid-template-areas: 
+    "fig shown-word"
+    "fig wrong-guesses"
+    "fig point-counter";
+}
+
+#shown-word {
+    grid-area: shown-word;
+}
+
+#wrong-guesses {
+    grid-area: wrong-guesses;
+}
+
+#point-counter {
+    grid-area: point-counter;
+    margin-left: 2.5rem;
 }
 
 #hangman {
@@ -64,10 +83,13 @@ button:hover {
     grid-area: fig;
 }
 
+/* This is because some parts of the figure were double lined */
 .thinner {
     stroke-width: 2px;
     fill: white;
 }
+
+/*-------------------------POP-UP-------------------------------------_*/
 
 #lose-popup {
     background-image: url(https://i.gifer.com/U3w9.gif);
@@ -106,25 +128,18 @@ button:hover {
 }
 
 #win-popup {
-    background-image: url(https://i.gifer.com/7ktp.gif);
-    background-position: center;
+    background: url(https://i.gifer.com/7ktp.gif) center;
     background-size: cover;
     position: absolute;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     text-align: center;
-    border-radius:  5px;
-    box-shadow: 0 15px 10px 3px rgba(18, 17, 17, 0.249);
     padding: 20px;
-    z-index: +2;
     top: 20%;
     width: 20%;
     left: 40%;
-    
-
 }
 
+/*----------------------------TEXT-STYLING------------------------------------------*/
 
 #game-name, #instructions-heading, #instructions-text {
     text-align: center;
@@ -151,30 +166,8 @@ ul {
     flex-direction: row;
 }
 
-#game-container {
-    display:grid;
-    grid-template-areas: 
-    "fig shown-word"
-    "fig wrong-guesses"
-    "fig point-counter";
-}
-
-#shown-word {
-    grid-area: shown-word;
-}
-
-#wrong-guesses {
-    grid-area: wrong-guesses;
-}
-
-#point-counter {
-    grid-area: point-counter;
-    margin-left: 2.5rem;
-}
-
-#right-word {
-    display: none;
-}
+/*---------------------------DISPLAY-NONE------------------------------------------*/
+/* This is placed at the bottom to override previous styling when toggled on in JavaScript */
 
 .hide {
     display: none;
