@@ -64,6 +64,7 @@ button:hover {
 #hangman {
     stroke: rgb(245, 243, 243);
     stroke-width: 5px;
+    grid-area: fig;
 }
 
 .thinner {
@@ -149,8 +150,22 @@ ul {
 
 #game-container {
     display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-areas: 
+    "fig shown-word"
+    "fig wrong-guesses"
+    "fig point-counter";
+}
+
+#shown-word {
+    grid-area: shown-word;
+}
+
+#wrong-guesses {
+    grid-area: wrong-guesses;
+}
+
+#point-counter {
+    grid-area: point-counter;
 }
 
 #right-word {
