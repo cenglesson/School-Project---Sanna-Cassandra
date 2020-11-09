@@ -71,7 +71,7 @@ button:hover {
 #lose-popup {
     background-image: url(https://i.gifer.com/U3w9.gif);
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     
     position: absolute;
     top: 0;
