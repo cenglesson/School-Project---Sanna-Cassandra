@@ -62,7 +62,8 @@ window.addEventListener("keydown", e => {
         if (shownWord.innerHTML === rightWord.innerHTML) {
             winPopup.classList.toggle('hide');
             points += (5 - errorCounter);
-            pointContainer.innerHTML = points;       
+            pointContainer.innerHTML = points; 
+            winPopup.style.display = 'flex';      
          }
 
     // If the letter is not in the word, add it to the wrong-guesses-list
@@ -80,6 +81,8 @@ window.addEventListener("keydown", e => {
         if (errorCounter === 5 ){
             losePopup.classList.toggle("hide");
             theWordWas.innerHTML = word;
+            
+
         };
     }
     }
@@ -90,6 +93,7 @@ var resetGame = () => {
     shownWord.innerHTML = " ";
     rightWord.innerHTML = " ";
     wrongGuesses.innerHTML = " ";
+    winPopup.style.display = 'none'; 
     errorCounter = 0;
     figureParts.forEach( element => {
         if (element.classList.contains("hide")=== false){
@@ -103,7 +107,7 @@ var resetGame = () => {
 // Play again - Win
 playAgainBtn.addEventListener('click', () => {
     resetGame();
-    winPopup.classList.toggle("hide");
+    winPopup.classList.toggle("hide");   
 });
 
 // Play again - Lose
