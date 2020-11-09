@@ -166,6 +166,7 @@ ul {
 
 #point-counter {
     grid-area: point-counter;
+    margin-left: 2.5rem;
 }
 
 #right-word {
