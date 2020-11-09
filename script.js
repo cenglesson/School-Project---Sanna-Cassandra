@@ -8,6 +8,9 @@ document.getElementById('start-button').addEventListener('click', function() {
 
 /*-----------------------THE-GAME----------------------------*/
 
+////// HEJ SANNA!
+
+
 // Create JS variables for HTML-elements
 var word = "";
 var shownWord = document.getElementById("shown-word");
