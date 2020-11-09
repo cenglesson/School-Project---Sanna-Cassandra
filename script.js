@@ -68,7 +68,7 @@ window.addEventListener("keydown", e => {
         // If the word is completed show "win-PopUp" and add points
         if (shownWord.innerHTML === rightWord.innerHTML) {
             winPopup.classList.toggle('hide');
-            points += (5 - errorCounter);
+            points += (6 - errorCounter);
             pointContainer.innerHTML = points;      
          }
 
@@ -87,7 +87,7 @@ window.addEventListener("keydown", e => {
         errorCounter += 1;
         
         // When error counter reaches five show the "lose-PopUp"
-        if (errorCounter === 5 ){
+        if (errorCounter === 6 ){
             losePopup.classList.toggle("hide");
             theWordWas.innerHTML = word;
             pointResult.innerHTML = `You got ${points} points.`;
