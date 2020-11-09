@@ -12,7 +12,11 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0;
+<<<<<<< HEAD
     position:relative;
+=======
+    overflow: hidden;
+>>>>>>> c10b0eda5b62947d6aafeaab9a5b5709969e9362
     
    
 }
@@ -78,6 +82,24 @@ button:hover {
     left: 0;
     right: 0;
     text-align: center;
+    flex-direction: column;
+}
+
+#lose-popup h1 {
+    font-size: 200px;
+    text-decoration-style: wavy;
+    margin-top: 100px;
+    margin-bottom: 2px;
+}
+
+#lose-popup p {
+    font-size: 100px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+#lose-popup button {
+    margin-top: 50px;
 }
 
 #win-popup {
