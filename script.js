@@ -61,8 +61,9 @@ window.addEventListener("keydown", e => {
 
         if (shownWord.innerHTML === rightWord.innerHTML) {
             winPopup.classList.toggle('hide');
-            points += 5 - errorCounter;
-        }
+            points += (5 - errorCounter);
+            pointContainer.innerHTML = points;       
+         }
 
     // If the letter is not in the word, add it to the wrong-guesses-list
     } else {
