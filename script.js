@@ -29,7 +29,7 @@ const words = ['coffee', 'programming', 'interface', 'whiskey', 'love', 'glowwor
 var theWord = () => {
     // Choose a random word from the array of words
  word = words[Math.floor(Math.random() * words.length)];
-
+ console.log(word);
 // Create a list of lines with as many lines as there are letters in the chosen word
 for (var i=0; i<word.length; i++) {
     shownWord.innerHTML += "<li>_</li>";
@@ -91,6 +91,7 @@ var resetGame = () => {
     rightWord.innerHTML = " ";
     wrongGuesses.innerHTML = " ";
     errorCounter = 0;
+    points = 0;
     figureParts.forEach( element => {
         if (element.classList.contains("hide")){
             console.log("hej");
