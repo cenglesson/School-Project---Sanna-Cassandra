@@ -91,7 +91,6 @@ var resetGame = () => {
     rightWord.innerHTML = " ";
     wrongGuesses.innerHTML = " ";
     errorCounter = 0;
-    points = 0;
     figureParts.forEach( element => {
         if (element.classList.contains("hide")){
             console.log("hej");
@@ -110,5 +109,7 @@ playAgainBtn.addEventListener('click', () => {
 // Play again - Lose
 playAgainBtn2.addEventListener('click', () =>{
     resetGame();
+    points = 0;
+    pointContainer.innerHTML = points;
     losePopup.classList.toggle("hide");
 });
