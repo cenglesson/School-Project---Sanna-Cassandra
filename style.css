@@ -134,7 +134,7 @@ button:hover {
 }
 
 #win-popup {
-    background: url(https://i.gifer.com/7ktp.gif) center;
+    background: url(https://giffiles.alphacoders.com/101/101249.gif) center;
     background-size: cover;
     position: absolute;
     flex-direction: column;
@@ -146,21 +146,21 @@ button:hover {
 }
 
 .notification-container {
-    background-color: rgba(255, 255, 255, 0.913);
+    background-image: url(https://cdn.lowgif.com/small/f86724643fd609c9-.gif);
     border-radius: 10px 10px 0 0;
-    padding: 15px 20px;
+    padding: 50px 50px;
     position: absolute;
-    bottom: -80px;
+    bottom: -150px;
     transition: transform 0.2s ease-in-out;
 }
 
 .notification-container p {
     margin: 0;
-    color: black;
+    color: white;
 }
 
 .notification-container.show {
-    transform: translateY(-70px);
+    transform: translateY(-150px);
 }
 
 
