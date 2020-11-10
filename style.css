@@ -5,10 +5,10 @@
 /*-------------------GENERAL-STYLING--------------------------*/
 
 body {
-    background:url(https://wallpapercave.com/wp/YWu8z9R.gif) top;
+    background: url(https://wallpapercave.com/wp/YWu8z9R.gif) top;
     background-size: cover;
     color: rgb(255, 254, 254);
-    font-family: 'VT323', monospace;;
+    font-family: 'VT323', monospace;
     flex-direction: column;
     align-items: center;
     margin: 0;
@@ -19,9 +19,10 @@ body {
     display: flex;
 }
 
+
 /*-------------------START-FRAME-------------------------*/
 
-#start-frame  {
+#start-frame {
     text-align: center;
 }
 
@@ -33,19 +34,24 @@ h3 {
     font-size: 20px;
 }
 
-p, li {
+p,
+li {
     font-size: 50px;
 }
 
+
 /* Styling for all buttons */
+
 button {
     background-color: rgba(248, 245, 245, 0.651);
     color: rgb(245, 241, 241);
-    display: block; margin: auto; 
+    display: block;
+    margin: auto;
     height: 50px;
     width: 200px;
     font-size: 25px;
-    font-family: 'VT323', monospace;;
+    font-family: 'VT323', monospace;
+    ;
     margin-top: 0;
     cursor: pointer;
 }
@@ -54,14 +60,12 @@ button:hover {
     color: rgb(0, 0, 0);
 }
 
+
 /*----------------------------THE-GAME----------------------------------------*/
 
 #game-container {
-    display:grid;
-    grid-template-areas: 
-    "fig shown-word"
-    "fig wrong-guesses"
-    "fig point-counter";
+    display: grid;
+    grid-template-areas: "fig shown-word" "fig wrong-guesses" "fig point-counter";
 }
 
 #shown-word {
@@ -83,11 +87,14 @@ button:hover {
     grid-area: fig;
 }
 
+
 /* This is because some parts of the figure were double lined */
+
 .thinner {
     stroke-width: 2px;
     fill: white;
 }
+
 
 /*-------------------------POP-UP-------------------------------------_*/
 
@@ -122,7 +129,6 @@ button:hover {
     margin-bottom: 2rem;
 }
 
-
 #lose-popup button {
     margin-top: 50px;
 }
@@ -139,9 +145,30 @@ button:hover {
     left: 40%;
 }
 
+.notification-container {
+    background-color: rgba(255, 255, 255, 0.913);
+    border-radius: 10px 10px 0 0;
+    padding: 15px 20px;
+    position: absolute;
+    bottom: -80px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.notification-container p {
+    margin: 0;
+    color: black;
+}
+
+.notification-container.show {
+    transform: translateY(-70px);
+}
+
+
 /*----------------------------TEXT-STYLING------------------------------------------*/
 
-#game-name, #instructions-heading, #instructions-text {
+#game-name,
+#instructions-heading,
+#instructions-text {
     text-align: center;
 }
 
@@ -151,12 +178,12 @@ button:hover {
 }
 
 #instructions-heading {
-  font-size: 30px;
-  margin-top: 10px;
-  margin-bottom: 3px;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 3px;
 }
 
-#game-name{
+#game-name {
     margin-top: 30px;
     margin-bottom: 10px;
 }
@@ -166,7 +193,10 @@ ul {
     flex-direction: row;
 }
 
+
 /*---------------------------DISPLAY-NONE------------------------------------------*/
+
+
 /* This is placed at the bottom to override previous styling when toggled on in JavaScript */
 
 .hide {
