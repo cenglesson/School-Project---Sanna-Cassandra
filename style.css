@@ -147,8 +147,8 @@ button:hover {
 
 .notification-container {
     background-image: url(https://cdn.lowgif.com/small/f86724643fd609c9-.gif);
-    border-radius: 10px 10px 0 0;
-    padding: 50px 50px;
+    border-radius: 1rem 1rem 0 0;
+    padding: 1rem 2rem;
     position: absolute;
     bottom: -160px;
     transition: transform 0.2s ease-in-out;
