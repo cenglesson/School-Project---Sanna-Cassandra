@@ -11,6 +11,8 @@
 </head>
 
 <body class="flex-container">
+
+    <!-- START FRAME-->
     <article id="start-frame">
         <h1><i class="fas fa-gamepad"></i> Welcome To Our Game! <i class="fas fa-gamepad"></i></h1>
         <img src="https://webstockreview.net/images/eye-clipart-animation-19.gif" alt="hanging man" width=200 />
@@ -18,12 +20,18 @@
         <embed src="./MysteriousSuspensefulMusic2018-11-03_-_Dark_Fog_-_David_Fesliyan-1.mp3" width="180" height="90" loop="false" autostart="false">
     </article>
 
+    <!-- THE GAME -->
     <article id="chapter-one" class="hide">
+
+        <!-- GAME HEADING + INSTRUCTIONS -->
         <h1 id="game-name">HANGMAN</h1>
         <h3 id="instructions-heading"> - Find The Hidden Word -</h3>
         <p id="instructions-text">Press a letter on your keyboard to make a guess!</p>
 
+        <!-- GAME CONTAINER -->
         <section id="game-container">
+
+            <!-- FIGURE -->
             <svg id="hangman" width="250" height="300" viewBox="0 0 501 565" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <ellipse id="ground" cx="250.5" cy="536" rx="250.5" ry="29" fill="none" fill-opacity="0.06" />
                 <path id="gallows" class="figure-part hide" fill-rule="evenodd" clip-rule="evenodd"
@@ -43,10 +51,12 @@
                     fill="none" />
             </svg>
 
+            <!-- LISTS OF LETTERS TO BE FILLED IN JAVASCRIPT -->
             <ul class="flex-container" id="shown-word"></ul>
             <ul class="flex-container" id="wrong-guesses"></ul>
             <ul id="right-word" class="hide"></ul>
 
+            <!-- POINT CONTAINER TO USE IN LOSE-POPUP -->
             <article class="flex-container" id="point-counter">
                 <p>Points: </p>
                 <p id="point-container"></p>
@@ -54,11 +64,13 @@
 
         </section>
 
+        <!-- WIN POPUP -->
         <article id="win-popup" class="flex-container hide">
             <h1>You Won!</h1>
             <button id="play-again-btn">Play Again!</button>
         </article>
 
+        <!-- LOSE POPUP -->
         <article id="lose-popup" class="flex-container hide">
             <h1>GAME OVER</h1>
             <p>The word was:</p>
@@ -67,12 +79,14 @@
             <button id="play-again-btn2">Play Again!</button>
         </article>
 
+        <!-- NOTIFICATION FOR WHEN YOU'VE ALREADY GUESSED A LETTER -->
         <article class="notification-container" id="notification-container">
             <p>YOU HAVE ALREADY ENTERED THIS LETTER..</p>
         </article>
 
     </article>
 </body>
+
 <script src="./script.js"></script>
 
 </html>

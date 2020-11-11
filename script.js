@@ -1,6 +1,8 @@
 /*-----------------------START-FRAME-------------------------*/
 
+// When start button is pressed, hide start page and show game page
 document.getElementById("start-button").addEventListener("click", function() {
+    
     //Toggle hide class
     document.getElementById("chapter-one").classList.toggle("hide");
     document.getElementById("start-frame").classList.toggle("hide");
@@ -23,7 +25,7 @@ var pointContainer = document.getElementById("point-container");
 var pointResult = document.getElementById("point-result");
 var notification = document.getElementById('notification-container');
 
-// Create variables for "future Use"
+// Create variables for future use
 var points = 0;
 var errorCounter = 0;
 var word = "";
@@ -33,9 +35,13 @@ const words = ['coffee', 'programming', 'interface', 'whiskey', 'love', 'glowwor
 
 // Prepare word and lists for the game
 var setTheWord = () => {
+
     // Choose a random word from the array of words
     word = words[Math.floor(Math.random() * words.length)];
+
+    // Show word in console for easier inspection and game-testing
     console.log(word);
+
     // Create a list of lines with as many lines as there are letters in the chosen word
     for (var i = 0; i < word.length; i++) {
         shownWord.innerHTML += "<li>_</li>";
@@ -62,7 +68,7 @@ window.addEventListener("keydown", e => {
               notification.classList.remove('show');
             }, 2000);
 
-            // If the letter is in the word - show it in the right position
+        // If the letter is in the word, show letter in the right position
         } else if (word.includes(letter)) {
             for (var i = 0; i < word.length; i++) {
                 if (letter === word[i]) {
@@ -70,14 +76,14 @@ window.addEventListener("keydown", e => {
                 }
             }
 
-            // If the word is completed show "win-PopUp" and add points
+            // If the word is completed, show "win-PopUp" and add points
             if (shownWord.innerHTML === rightWord.innerHTML) {
                 winPopup.classList.toggle('hide');
                 points += (5 - errorCounter);
                 pointContainer.innerHTML = points;
             }
 
-            // If the letter is not in the word, add it to the wrong-guesses-list
+        // If the letter is not in the word, add it to the wrong-guesses-list
         } else {
             wrongGuesses.innerHTML += "<li>" + letter + "</li>";
 
@@ -91,7 +97,7 @@ window.addEventListener("keydown", e => {
             // Add one more error to the counter
             errorCounter += 1;
 
-            // When error counter reaches five show the "lose-PopUp" with a 500 ms delay
+            // When error counter reaches five show the "lose-popup" with a 500 ms delay
             if (errorCounter === 5 ){
                 setTimeout(() => { 
                     losePopup.classList.toggle("hide");
@@ -103,12 +109,14 @@ window.addEventListener("keydown", e => {
     }
 });
 
-// Reset game - defining a function to invoke when you win or lose
+// Defining a function to invoke when you win or lose to reset the game
 var resetGame = () => {
+    // Reset necessary variables
     shownWord.innerHTML = " ";
     rightWord.innerHTML = " ";
     wrongGuesses.innerHTML = " ";
     errorCounter = 0;
+
     // Hide figure parts that are showing
     figureParts.forEach(element => {
         if (element.classList.contains("hide") === false) {
@@ -120,13 +128,13 @@ var resetGame = () => {
     setTheWord();
 };
 
-// Play again button - If you win
+// Play again button when you have won (reset game and hide popup)
 playAgainBtn.addEventListener('click', () => {
     resetGame();
     winPopup.classList.toggle("hide");
 });
 
-// Play again button -  If you lose
+// Play again button when you have lost (reset game, hide popup, reset points)
 playAgainBtn2.addEventListener('click', () => {
     resetGame();
     losePopup.classList.toggle("hide");
