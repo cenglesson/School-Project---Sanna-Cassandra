@@ -150,7 +150,7 @@ button:hover {
     border-radius: 10px 10px 0 0;
     padding: 50px 50px;
     position: absolute;
-    bottom: -150px;
+    bottom: -160px;
     transition: transform 0.2s ease-in-out;
 }
 
@@ -160,7 +160,7 @@ button:hover {
 }
 
 .notification-container.show {
-    transform: translateY(-150px);
+    transform: translateY(-160px);
 }
 
 

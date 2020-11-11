@@ -49,24 +49,18 @@ setTheWord();
 // Insert points in container
 pointContainer.innerHTML = points;
 
-// SHOW NOTIFICATION
-
-function showNotification() {
-    notification.classList.add('show');
-
-    setTimeout(() => {
-        notification.classList.remove('show');
-    }, 2000);
-}
-
 // Make a guess by pressing letter on keyboard
 window.addEventListener("keydown", e => {
     if (e.keyCode >= 65 && e.keyCode <= 90) {
         const letter = e.key;
 
-        // If the letter has already been guessed, console the log
+        // If the letter has already been guessed, show notification for 2 seconds
         if (shownWord.innerHTML.includes("<li>" + letter + "</li>") || wrongGuesses.innerHTML.includes("<li>" + letter + "</li>")) {
-            showNotification();
+            notification.classList.add('show');
+
+            setTimeout(() => {
+              notification.classList.remove('show');
+            }, 2000);
 
             // If the letter is in the word - show it in the right position
         } else if (word.includes(letter)) {
@@ -97,11 +91,13 @@ window.addEventListener("keydown", e => {
             // Add one more error to the counter
             errorCounter += 1;
 
-            // When error counter reaches five show the "lose-PopUp"
-            if (errorCounter === 5) {
-                losePopup.classList.toggle("hide");
-                theWordWas.innerHTML = word;
-                pointResult.innerHTML = `You got ${points} points.`;
+            // When error counter reaches five show the "lose-PopUp" with a 500 ms delay
+            if (errorCounter === 5 ){
+                setTimeout(() => { 
+                    losePopup.classList.toggle("hide");
+                    theWordWas.innerHTML = word;
+                    pointResult.innerHTML = `You got ${points} points.`;
+                }, 500);
             };
         }
     }
